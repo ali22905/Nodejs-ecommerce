@@ -1,0 +1,52 @@
+doctype html
+html(lang="en")
+  head
+    include components/head
+  body 
+
+    include components/nav
+
+    section.welcome   
+      h1 Hello owner
+      p you can add or edit any product from here
+
+    //- id, name, price, front-img, back-img
+
+    section.add-product 
+      h1 add product
+      form.add-product(action="/home" method="POST")
+        input(required type="text" name="product_id" id="product_id" placeholder="product id" )
+        p#taken_id.d-none id is taken
+        input(required type="text" name="category" id="category_input" placeholder="product category (shoes - clothes)" )
+        p#invalid_category.d-none invalid category, availbile categories are (shoes, clothes)
+        input(required type="text" name="gender" id="gender_input" placeholder="gender (male - female)" )
+        p#invalid_gender.d-none invalid gender, availbile genders are (male, female)
+        input(required type="text" name="size" id="size_input" placeholder="size (kids - U22 - adult)" )
+        p#invalid_size.d-none invalid size, availbile sizes are (kids, U22, adult)
+        input(required type="text" name="product_name" id="product_name" placeholder="product name" )
+        input(required step="any" type="number" name="price" id="product_price" placeholder="price" )
+        input(required type="text" name="img1" id="product_img1" placeholder="image 1 name" )
+        input(required type="text" name="img2" id="product_img2" placeholder="image 2 name" )
+        input(required type="number" name="visits" id="visits_input" placeholder="visits" )
+        input(required readonly value="false" type="text" name="cart" id="cart_input" placeholder="cart" )
+        textarea(id="product_des" name="des" rows="4" cols="50" maxlength="200" placeholder="product description")
+        p#invalid_des.d-none product description must be at least 7 letters
+        .check_availability
+          label(for="product_availbilty") availability
+          input( type="checkbox" name="availability" id="product_availbilty" )
+          button#add_product_btn(type="submit") submit 
+
+    section.search-id
+      h1 edit product
+      .input-cont
+        input(required type="text" name="product_id" id="find_id_input" placeholder="product id" )
+        button#search_id search 
+      p#id_not_found.d-none can't find the entered id
+
+
+    span#data(style="display:none" data-objects=`${ids_str}`)
+      
+
+    include components/footer
+    include components/scripts
+    script(src="/search-id-min.js") 

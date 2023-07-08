@@ -1,0 +1,17 @@
+.product-content.col-9
+            .row.row-cols-1.row-cols-md-3.g-4
+              if (all_data.length == 0)
+                h1 cannot find any products
+              for product,i in all_data
+                .col
+                  .card.h-100
+                    img.card-img-top.front-img(src=`/imgs/${product.img1}.png` alt=`...`)
+                    img.card-img-top.back-img(src=`/imgs/${product.img2}.png` alt=`...`)
+                    .card-body
+                      h5.card-title=product.product_name
+                      p.card-description(data-des=`${product.des}`)
+                        a(href=`/product/${product.product_id}`) see more
+                      .info 
+                        a(href='/').favorite <3
+                        span.price $#{product.price}
+                      a.buy_btn(href=`/product/${product.product_id}`).buy Buy

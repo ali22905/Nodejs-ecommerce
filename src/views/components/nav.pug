@@ -1,0 +1,237 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.comp.sticky-top.d-none.d-lg-block
+      .container-fluid
+        a.logo.navbar-brand(href='/') AZ
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='/') Home
+            li.nav-item
+              a.nav-link(aria-current='page' href='/home/products-list?gender=male')
+                | MEN
+              .popup-info 
+                ul.info
+                  li
+                    a.category(href='/home/products-list?gender=male&category=shoes') shoes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                    a.category(href='/') product 4
+                  li
+                    a.category(href='/home/products-list?gender=male&category=clothes') clothes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                  li
+                    a.category(href='/home/products-list?gender=male') sales
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                .img-cont 
+                  img.img-fluid(src="/imgs/new-arivles.jpg" alt="jacket and shoes")
+                  img.img-fluid(src="/imgs/spring-look.jpg" alt="jacket and shoes")
+                  
+            li.nav-item
+              a.nav-link(aria-current='page' href='/home/products-list?gender=female')
+                | WOMEN
+              .popup-info 
+                ul.info
+                  li
+                    a.category(href='/home/products-list?gender=female&category=shoes') shoes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                    a.category(href='/') product 4
+                  li
+                    a.category(href='/home/products-list?gender=female&category=clothes') clothes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                  li
+                    a.category(href='/home/products-list?gender=female') sales
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                .img-cont 
+                  img.img-fluid(src="/imgs/new-arivles.jpg" alt="jacket and shoes")
+                  img.img-fluid(src="/imgs/spring-look.jpg" alt="jacket and shoes")
+            li.nav-item
+              a.nav-link(aria-current='page' href='/home/products-list?size=kids')
+                | KIDS
+              .popup-info 
+                ul.info
+                  li
+                    a.category(href='/home/products-list?size=kids&category=shoes') shoes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                    a.category(href='/') product 4
+                  li
+                    a.category(href='/home/products-list?size=kids&category=clothes') clothes
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                  li
+                    a.category(href='/home/products-list?size=kids') sales
+                    a.category(href='/') product 1
+                    a.category(href='/') product 2
+                    a.category(href='/') product 3
+                .img-cont 
+                  img.img-fluid(src="/imgs/new-arivles.jpg" alt="jacket and shoes")
+                  img.img-fluid(src="/imgs/spring-look.jpg" alt="jacket and shoes")
+          form.d-flex(action='/home/products-list' method="POST")
+            input#search_product_input.form-control.me-2(type='text' name="product_name" placeholder='Search')
+            button#search_prodcut_btn.btn.btn-outline-success(type='submit') Search
+
+
+
+button#menu.d-inline.d-lg-none 
+  i.fa-solid.fa-bars
+
+section#mobile-nav.app.d-block.d-lg-none.sticky-top
+      aside.sidebar
+        header
+          | Menu
+        nav.sidebar-nav
+          ul
+            li
+              a(href='/')
+                i.ion-bag
+                svg.bi.bi-list(xmlns='/bootstrap-icons/icons/list.svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                path(fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
+                i(class="bi bi-list")
+                span HOME
+            li
+              a
+                i.ion-ios-settings
+                span MEN
+              ul.nav-flyout
+                li
+                  a(href='/home/products-list?gender=male&category=shoes')
+                    i.ion-ios-alarm-outline
+                    | shoes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 4
+                li
+                  a(href='/home/products-list?gender=male&category=clothes')
+                    i.ion-ios-camera-outline
+                    | clothes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                li
+                  a(href='/home/products-list?gender=male')
+                    i.ion-ios-chatboxes-outline
+                    | sales
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+            li
+              a
+                i.ion-ios-briefcase-outline
+                span WOMEN
+              ul.nav-flyout
+                li
+                  a(href='/home/products-list?gender=female&category=shoes')
+                    i.ion-ios-alarm-outline
+                    | shoes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 4
+                li
+                  a(href='/home/products-list?gender=female&category=clothes')
+                    i.ion-ios-camera-outline
+                    | clothes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                li
+                  a(href='/home/products-list?gender=female')
+                    i.ion-ios-chatboxes-outline
+                    | sales
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+            li
+              a
+                i.ion-ios-analytics-outline
+                span KIDS
+              ul.nav-flyout
+                li
+                  a(href='/home/products-list?gender=kids&category=shoes')
+                    i.ion-ios-alarm-outline
+                    | shoes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 4
+                li
+                  a(href='/home/products-list?gender=kids&category=clothes')
+                    i.ion-ios-camera-outline
+                    | clothes
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 3
+                li
+                  a(href='/home/products-list?gender=kids')
+                    i.ion-ios-chatboxes-outline
+                    | sales
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 1
+                  a(href='/')
+                    i.ion-ios-alarm-outline
+                    | product 2 
+            li
+              form.d-flex(action='/home/products-list' method="POST")
+                input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+                button.btn(type='submit') Search

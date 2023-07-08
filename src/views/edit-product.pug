@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  head
+    include components/head
+
+  body 
+
+
+    include components/nav
+    //- -let product_data = [{product_id: "test", product_name: "test", price: 00, img1: "test", img2: "test", availability: "on"}]
+    header.product-info
+      h1 ID: #{product_id}
+      h2 title: #{product_name}
+      h3 price: #{price}
+      .imgs-cont
+        .image1.img-cont
+          h2 image 1
+          img(src=`/imgs/${img1}.png`, alt="")
+        .image2.img-cont
+          h2 image 2
+          img(src=`/imgs/${img2}.png`, alt="")
+
+    section.edit-product-cont
+      h1 edit this product
+      form.edit-name.edit-product(action=`/settings/${product_id}` method="POST")
+        input(required type="text" name="product_name" id="product_name" placeholder="product name" )
+        
+        input(required step="any" type="number" name="price" id="product_price" placeholder="price" )        
+
+        input(required type="text" name="img1" id="product_img1" placeholder="image 1 name" )
+        
+        input(required type="text" name="img2" id="product_img2" placeholder="image 2 name" )
+        
+        .check_availability
+          label(for="product_availbilty") availability
+          input( type="checkbox" name="availability" id="product_availbilty" )
+          button.add_product_btn(type="submit" data-propety="availability") submit 
+
+
+    span#get_product_properties
+      span#product_name_span(data-product_name=`${product_name}`)
+      span#price_span(data-price=`${price}`)
+      span#img1_span(data-img1=`${img1}`)
+      span#img2_span(data-img2=`${img2}`)
+      span#availability_span(data-availability=`${availability}`)
+
+
+    include components/footer
+    include components/scripts
+    script(src="/edit-product-min.js") 

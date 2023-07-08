@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  head
+    include components/head
+  body 
+    include components/nav
+
+    section.intro
+      .container 
+        .row
+          h4.col 
+            span#home_btn home / 
+            span#current_dir cart
+          h4.col there are 
+            span#products_count #{all_data.length}
+            |  products in your cart
+        .row 
+          h1#cart_title My cart
+    -var all_price = 0;
+    -var products_count = 0;
+    section.main.cart
+      .container
+        .row.justify-content-between
+          .product-content.col-9
+            .row.row-cols-1.row-cols-md-3.g-4
+              if (all_data.length == 0)
+                h1 cannot find any products
+              for product,i in all_data
+                -all_price = all_price + product.price
+                -products_count = products_count + 1;
+                .col
+                  .card.h-100
+                    img.card-img-top.front-img(src=`/imgs/${product.img1}.png` alt=`...`)
+                    img.card-img-top.back-img(src=`/imgs/${product.img2}.png` alt=`...`)
+                    .card-body
+                      h5.card-title=product.product_name
+                      p.card-description(data-des=`${product.des}`)
+                        a(href=`/product/${product.product_id}`) see more
+                      .info 
+                        a(href='/').favorite <3
+                        span.price $#{product.price}
+                      button.remove_cart.buy(data-product_id=`${product._id}`) REMOVE
+          .check-out.col-3
+            h1
+              span #{products_count}
+              |  products
+            h2 Total price: 
+              span $#{all_price}
+            button#check_out_btn Check out
+            
+
+
+    include components/footer
+    include components/scripts
+    script(src="/cart-min.js")  

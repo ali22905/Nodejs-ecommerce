@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    include components/head
+  body 
+    include components/nav
+
+    section.intro
+      .container 
+        .row
+          h4.col 
+            span#home_btn home / 
+            span#current_dir
+          h4.col #{all_data.length} products found
+        .row 
+          h1#gender_title
+
+    section.main
+      .container
+        .row.justify-content-between
+          include components/filters
+
+          include components/product-content
+
+
+
+    include components/footer
+    include components/scripts
+    script(src="/products-min.js") 

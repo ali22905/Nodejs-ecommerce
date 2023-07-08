@@ -1,0 +1,44 @@
+mixin store(data)
+      .container
+        h1=data.title
+        .row.row-cols-1.row-cols-md-4.g-4
+          .col.col
+            .card.h-100
+              img.card-img-top.front-img(src=`/imgs/${data.img1}.png` alt='...')
+              img.card-img-top.back-img(src=`/imgs/${data.img1_back}.png` alt='...')
+              .card-body
+                h5.card-title=data.title1
+                .info 
+                  a(href='/').favorite <3
+                  span.price $#{data.price1}
+                a(href=`/product/${data.id1}`).buy Buy
+          .col.col
+            .card.h-100
+              img.card-img-top.front-img(src=`/imgs/${data.img2}.png` alt='...')
+              img.card-img-top.back-img(src=`/imgs/${data.img2_back}.png` alt='...')
+              .card-body
+                h5.card-title=data.title2
+                .info 
+                  a(href='/').favorite <3
+                  span.price $#{data.price2}
+                a(href=`/product/${data.id2}`).buy Buy
+          .col.col
+            .card.h-100
+              .img-cont 
+                img.card-img-top.test-scale(src=`/imgs/${data.img3}.png` alt='...')
+              .card-body
+                h5.card-title=data.title3
+                .info 
+                  a(href='/').favorite <3
+                  span.price $#{data.price3}
+                a(href=`/product/${data.id3}`).buy Buy
+          .col.col
+            .card.h-100
+              .img-cont  
+                img.card-img-top.test-scale(src=`/imgs/${data.img4}.png` alt='...')
+              .card-body
+                h5.card-title=data.title4
+                .info 
+                  a(href='/').favorite <3
+                  span.price $#{data.price4}
+                a(href=`/product/${data.id4}`).buy Buy

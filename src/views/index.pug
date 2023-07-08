@@ -1,0 +1,109 @@
+include components/mixins
+include components/vars
+
+
+
+
+doctype html
+html(lang="en")
+  head
+    include components/head
+
+  body 
+
+    include components/nav
+
+
+    header.header 
+      .header-info
+        h1 50% OFF
+        h3 AZ 
+        a(href="/") BUY NOW
+      .right-arrow.arrow
+        span >
+      .left-arrow.arrow
+        span <
+
+
+    section.newly-added
+      -const mixin_data4 = {id1: product1_id, title: 'Newly added',title1: product1_product_name, price1: product1_price, img1: product1_img1,img1_back: product1_img2, id2: product2_id, title2: product2_product_name, price2: product2_price, img2: product2_img1,img2_back: product2_img2, id3: product3_id, title3: product3_product_name, price3: product3_price, img3: product3_img1,img3_back: product3_img2, id4: product4_id, title4: product4_product_name, price4: product4_price, img4: product4_img1,img4_back: product4_img2}
+        +store(mixin_data4)
+
+
+
+    section.between-img1 
+      .container-fluid  
+        .row 
+          span.col easy and powerful
+          span.col dress like a star with the cheapest prices
+
+
+
+    section.sales
+      -const mixin_data = {id1: first_lowP_id, title: 'Sales',title1: first_lowP_name, price1: first_lowP_price, img1: first_lowP_img1,img1_back: first_lowP_img2, id2: second_lowP_id, title2: second_lowP_name, price2: second_lowP_price, img2: second_lowP_img1,img2_back: second_lowP_img2, id3: third_lowP_id, title3: third_lowP_name, price3: third_lowP_price, img3: third_lowP_img1,img3_back: third_lowP_img2, id4: forth_lowP_id, title4: forth_lowP_name, price4: forth_lowP_price, img4: forth_lowP_img1,img4_back: forth_lowP_img2}
+        +store(mixin_data)
+
+
+
+    section.between-img2 
+      .container-fluid  
+        .row 
+          span.col deals of the day
+          span.col sales up to #{up_to_off}% OFF
+          span.col don't mess up
+
+
+
+    section.popular
+      -const mixin_data2 = {title: 'Most Popular', id1: popular[0].product_id, title1: popular[0].product_name, price1: popular[0].price, img1: popular[0].img1, img1_back: popular[0].img2, id2: popular[1].product_id, title2: popular[1].product_name, price2: popular[1].price, img2: popular[1].img1, img2_back: popular[1].img2, id3: popular[2].product_id, title3: popular[2].product_name, price3: popular[2].price, img3: popular[2].img1, img3_back: popular[2].img2, id4: popular[3].product_id, title4: popular[3].product_name, price4: popular[3].price, img4: popular[3].img1, img4_back: popular[3].img2}
+        +store(mixin_data2)
+
+
+
+    section.between-img3
+      .container-fluid  
+        .row 
+          a.btn(href='/')
+            | Shop now  
+
+
+
+    section.why-us 
+      .container
+        .row
+          .intro 
+            h1 Why us
+            p we are a web store with a lot of experinces and reviews
+        .row.client
+          .img-cont.col-5
+            img(src='/imgs/client1.png')
+          .text.col-7
+            h1 Ali Tarek Zaghloul
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel molestias debitis optio facilis quas voluptas necessitatibus, delectus ab itaque, ipsa animi, aspernatur odit amet in pariatur ratione hic cumque nemo!
+        .row.client
+          .text.col-7
+            h1 Abduallah Tarek Zaghloul
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel molestias debitis optio facilis quas voluptas necessitatibus, delectus ab itaque, ipsa animi, aspernatur odit amet in pariatur ratione hic cumque nemo!
+          .img-cont.col-5
+            img(src='/imgs/obad-img.png')
+
+
+    section.contact
+      .overlay
+        .container
+          .send-email
+            h1 send me an email
+            p or use my accounts on the bottom of the page
+            form(enctype='text/plain' action='ali2292005@gmail.com' method='post')
+              input#name(type='text' name='name' placeholder='your name')
+              input#email(type='email' name='email' placeholder='your email')
+              textarea#comments(rows='12' cols='35' name='comments' placeholder='content')
+              button(type='submit') submit
+
+
+
+
+
+    include components/footer
+    include components/scripts
+    

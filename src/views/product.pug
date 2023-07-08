@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    include components/head
+  body 
+    include components/nav
+
+    section.product
+      .container
+        .row.product-intro
+          h1.col-6.product-title #{product.product_name}
+          p.col-6.product-price $#{product.price}
+        .row.product-info
+          .info.col-4
+            h3 id: #{product.product_id}
+            h4 name: #{product.product_name}
+            p price: $#{product.price}
+            p gender: #{product.gender}
+            p popularity: #{product.visits}
+            //- ! TODO: make a PUT requset to make the cart key in the DB = true and then render the cart file with all true products
+            button#add_cart(data-id=`${product._id}`) add to cart
+          .imgs-cont.col-8
+            .big-imgs
+              img#first-lg-img.lg-img(data-number="first" src=`/imgs/${product.img1}.png`)
+              img#second-lg-img.lg-img.d-none(data-number="second" src=`/imgs/${product.img2}.png`)
+            .small-imgs
+              img#first-sm-img.sm-img.active(data-number="first" src=`/imgs/${product.img1}.png`)
+              img#second-sm-img.sm-img(data-number="second" src=`/imgs/${product.img2}.png`)
+        .row.product-details 
+          h3 size: #{product.size}
+          h4 popularity: #{product.visits}
+          p #{product.des}
+
+
+    include components/footer
+    include components/scripts
+    script(src="/product-page-min.js") 

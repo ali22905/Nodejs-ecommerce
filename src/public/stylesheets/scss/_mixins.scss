@@ -1,0 +1,111 @@
+
+
+@mixin btn($bg-color: $main-color,$bg-color-hover: $main-color-hover, $padding: 15px 20px, $color: white ) {
+  background-color: $bg-color;
+  padding: $padding;
+  color: $color;
+  cursor: pointer !important;
+  border-radius : 5%;
+  font-weight: bold;
+  transition: $main-transtion;
+
+  &:hover {
+    background-color: $bg-color-hover;
+  }
+}
+
+@mixin homeShop($bg-img:url(imgs/light-wood.jpg), $color: $main-color, $color-hover: $main-color-hover, $padding-block:90px, $bg-shape:polygon(76% 0, 100% 21%, 100% 100%, 0 100%, 0 0)) {
+  background-image: $bg-img;
+  padding-block: $padding-block;
+  clip-path: $bg-shape;
+  @media(max-width: 720px) {
+    & {
+      clip-path: polygon(75% 0,100% 0%,100% 100%,0 100%,0 0);
+      padding-block: 60px
+    }
+    & h1 {
+      font-size: 40px;
+    }
+  }
+
+  & h1 {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 70px;
+    font-size: 45px;
+  }
+  & .row {
+
+    & .col {
+      @media (max-width: 720px) {
+        padding-inline: 30px;
+      }
+      & .card {
+        border:none;
+        position: relative;
+        &:hover > img.back-img {
+          opacity: 100;
+        }
+        &:hover > img.front-img {
+          opacity: 0;
+        }
+        &:hover > .img-cont img.test-scale {
+          transform: rotate(9deg) scale(1.2);
+        }
+        & .img-cont {
+          overflow: hidden;
+        }
+        & img {
+          height: 200px;
+          transition: .6s;
+          &.back-img {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+          }
+          &.front-img {
+            top: 0;
+            opacity: 100;
+          }
+        }
+        & .card-body {
+          padding-inline: 0;
+          & h5 {
+            text-align: center;
+            width: 100%;
+          }
+          & .info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-block: 8px;
+            padding-inline: 10%;
+            & a.favorite {
+              color: $heart-color !important; 
+            }
+            & span.price {
+              color: $color;
+            }
+          }
+          & .buy {
+            @include btn($color, $color-hover, 6px 8px);
+            display: block;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            transition: $main-transtion;
+            border-radius: 5%;
+            border: none;
+            @media (max-width: 720px) {
+              & {
+                width: 30%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

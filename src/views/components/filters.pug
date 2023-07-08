@@ -1,0 +1,29 @@
+.filters.col-3
+  .type.filter(data-filter="type")
+    .filter-head(data-filter="type")
+      h5 type
+      span >
+    .links-cont 
+      .links 
+        a#category-link-clothes.category-link(href=`${URL}&category=clothes`) clothes
+        a#category-link-shoes.category-link(href=`${URL}&category=shoes`) shoes
+        a#category-link-all.category-link(href=`${URL}&category=clothes,shoes`) all
+  .gender.filter
+    .filter-head(data-filter="gender")
+      h5 gender
+      span >
+    .links-cont
+      .links
+        a#gender-link-male.gender-link(href="/home/products-list?gender=male") male
+        a#gender-link-female.ge-linknder-link(href="/home/products-list?gender=female") female
+        a#gender-link-all.gender-link(href="/home/products-list?gender=female,male") all
+  .size.filter
+    .filter-head(data-filter="size")
+      h5 size
+      span >
+    .links-cont
+      .links
+        a#size-link-kids.size-link(href="/home/products-list?size=kids") kids
+        a#size-link-U22.size-link(href="/home/products-list?size=U22") Under 22
+        a#size-link-adult.size-link(href="/home/products-list?size=adult") adult
+        a#size-link-all.size-link(href="/home/products-list?size=kids,adult,U22") not a matter
